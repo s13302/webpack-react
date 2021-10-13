@@ -9,6 +9,11 @@ module.exports = {
     mode,
     devtool: 'source-map',
 
+    entry: [
+        './src/index.js',
+        './src/styles/index.scss',
+    ],
+
     module: {
         rules: [{
             test: /\.jsx?$/i,
@@ -17,7 +22,7 @@ module.exports = {
                 'babel-loader',
             ],
         }, {
-            test: /\.(s[ac]|c)css$/i,
+            test: /\.(s[ac]|c)ss$/i,
             use: [
                 MiniCssExtractPlugin.loader,
                 'css-loader',
