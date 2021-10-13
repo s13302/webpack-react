@@ -11,7 +11,7 @@ module.exports = {
 
     module: {
         rules: [{
-            test: /\.js$/i,
+            test: /\.jsx?$/i,
             exclude: /node_modules/,
             use: [
                 'babel-loader',
@@ -30,6 +30,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin(),
     ],
+
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
 
     devServer: {
         static: path.join(__dirname, 'dist'),
